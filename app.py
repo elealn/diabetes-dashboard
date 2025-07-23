@@ -22,7 +22,7 @@ def index():
         pred = model.predict(df_pred)[0]
         resultado = f"Riesgo estimado de diabetes: {pred:.2f}"
 
-    # Mostrar gr·fico dummy (para ejemplo)
+    # Mostrar gr√°fico dummy (para ejemplo)
     df_demo = pd.DataFrame({
         "Variable": ["Age", "BMI", "BP"],
         "Valor Promedio": [0.03, 0.04, 0.05]
