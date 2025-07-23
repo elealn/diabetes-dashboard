@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Predicción de Diabetes</title>
+  <link rel="stylesheet" type="static/css" href="{{ url_for('static', filename='style.css') }}">
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+  <h1>Predicción del Riesgo de Diabetes</h1>
+  <form method="post">
+    <label>Edad (normalizada):</label><br>
+    <input type="text" name="age"><br>
+    <label>BMI (normalizada):</label><br>
+    <input type="text" name="bmi"><br>
+    <label>Presión arterial (normalizada):</label><br>
+    <input type="text" name="bp"><br><br>
+    <input type="submit" value="Predecir">
+  </form>
+
+  {% if resultado %}
+    <h2>{{ resultado }}</h2>
+  {% endif %}
+
+  <div id="grafico"></div>
+  <script>
+    var fig = {{ fig | safe }};
+    Plotly.newPlot('grafico', fig.data, fig.layout);
+  </script>
+</body>
+</html>
