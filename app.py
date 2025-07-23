@@ -22,7 +22,7 @@ def index():
         pred = model.predict(df_pred)[0]
         resultado = f"Riesgo estimado de diabetes: {pred:.2f}"
 
-    # Mostrar gráfico dummy (para ejemplo)
+    # Mostrar grafico dummy (para ejemplo)
     df_demo = pd.DataFrame({
         "Variable": ["Age", "BMI", "BP"],
         "Valor Promedio": [0.03, 0.04, 0.05]
@@ -35,5 +35,5 @@ def index():
 if __name__ == "__main__":
     #app.run(debug=True)
     import os
-    port = int(os.environ.get("PORT", 5000))  # Render asigna un puerto autom�ticamente
+    port = int(os.environ.get("PORT", 5000))  # Render asigna un puerto automáticamente
     app.run(debug=False, host="0.0.0.0", port=port)
