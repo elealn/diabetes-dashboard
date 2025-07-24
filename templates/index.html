@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Predicción de Diabetes</title>
+  <title>PredicciÃ³n de Diabetes</title>
   <link rel="stylesheet" type="static/css" href="{{ url_for('static', filename='style.css') }}">
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
 <body>
-  <h1>Predicción del Riesgo de Diabetes</h1>
+  <h1>PredicciÃ³n del Riesgo de Diabetes</h1>
   <form method="post">
     <label>Edad (normalizada):</label><br>
     <input type="text" name="age"><br>
     <label>BMI (normalizada):</label><br>
     <input type="text" name="bmi"><br>
-    <label>Presión arterial (normalizada):</label><br>
+    <label>PresiÃ³n arterial (normalizada):</label><br>
     <input type="text" name="bp"><br><br>
+    <label>Nivel de glucosa (normalizada):</label><br>
+    <input type="text" name="s6"><br><br>
     <input type="submit" value="Predecir">
   </form>
 

@@ -17,15 +17,15 @@ def index():
     fig_json = None
 
     if request.method == "POST":
-        features = [float(request.form[col]) for col in ['age', 'bmi', 'bp']]
-        df_pred = pd.DataFrame([features], columns=['age', 'bmi', 'bp'])
+        features = [float(request.form[col]) for col in ['age', 'bmi', 'bp','s6']]
+        df_pred = pd.DataFrame([features], columns=['age', 'bmi', 'bp','s6'])
         pred = model.predict(df_pred)[0]
-        resultado = f"Riesgo estimado de diabetes: {pred:.2f}"
+        resultado = f"Riesgo estimado de diabetes: {pred:.4f}"
 
-    # Mostrar gr√°fico dummy (para ejemplo)
+    # Mostrar gr·fico dummy (para ejemplo)
     df_demo = pd.DataFrame({
-        "Variable": ["Age", "BMI", "BP"],
-        "Valor Promedio": [0.03, 0.04, 0.05]
+        "Variable": ["Age", "BMI", "BP", "GLU"],
+        "Valor Promedio": [0.03, 0.04, 0.05, 0.02]
     })
     fig = px.bar(df_demo, x="Variable", y="Valor Promedio", title="Variables promedio")
     fig_json = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
